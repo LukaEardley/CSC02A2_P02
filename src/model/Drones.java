@@ -16,16 +16,17 @@ public class Drones {
         this.ID = ID;
         this.type = Type;
     }
-
+//adds the sensor to the sensor list
     public void addDroneSensor(String sensorID, String orientation) {
         this.sensorList.add(new Sensor(sensorID, orientation));
     }
-
+//formats the correct method for displaying the details about each drone
     public void displayDrones() {
         System.out.println(String.format("Drone ID: %s Drone Type: %s", this.ID, this.type));
         for (Sensor sensor : sensorList) {
             sensor.displaySense();
         }
+        //new line creation
         System.out.println("");
     }
 }

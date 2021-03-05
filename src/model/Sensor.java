@@ -1,6 +1,6 @@
 package model;
 /**
- * model.Sensor class that inherits from the Drone class
+ * model.Sensor class that has all the information relating to the drones sensor
  */
 public class Sensor {
     //Variables

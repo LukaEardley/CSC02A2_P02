@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
+//Class that is responsible for reading each file, parsing the strings and setting the values for each drone.
 public class DroneFileHandler {
 
     public static List<Drones> readDrones(String FileName) {
@@ -29,7 +30,7 @@ public class DroneFileHandler {
                 } else if (Pattern.matches("([a-zA-Z0-9\\t]{5,}([0-9]{2,},[0-9]{1})\\w)", data)) {
                     String sensorID = data.split("[ \\t]")[0];
                     String orientation = data.split("[ \\t]")[1];
-                    droneList.get(counter).addDroneSensor(sensorID, orientation);`
+                    droneList.get(counter).addDroneSensor(sensorID, orientation);
                 }
             }
             myReader.close();
@@ -38,9 +39,6 @@ public class DroneFileHandler {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-        //return arr of drones
         return null;
     }
 }
-//REGEX for ids ([a-zA-Z0-9]{5,})\w
-//REGEX for sensor ids and orientation ([0-9]{2,},[0-9]{1})\w
