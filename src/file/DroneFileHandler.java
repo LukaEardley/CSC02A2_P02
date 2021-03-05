@@ -21,15 +21,15 @@ public class DroneFileHandler {
 
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
-                if (Pattern.matches("([a-zA-Z0-9]{5,}[ \t]+\b(FLYING|GROUND)\b)", data)) {
-                    String ID = data.split("    ")[0];
-                    String Type = data.split("    ")[1];
+                if (Pattern.matches("([a-zA-Z0-9]{5,}[ \\t]+\\b(FLYING|GROUND)\\b)", data)) {
+                    String ID = data.split("[ \\t]")[0];
+                    String Type = data.split("[ \\t]")[1];
                     droneList.add(new Drones(ID, Type));
                     counter += 1;
-                } else if (Pattern.matches("([a-zA-Z0-9\t]{5,}([0-9]{2,},[0-9]{1})\\w)", data)) {
-                    String sensorID = data.split("    ")[0];
-                    String orientation = data.split("    ")[1];
-                    droneList.get(counter).addDroneSensor(sensorID, orientation);
+                } else if (Pattern.matches("([a-zA-Z0-9\\t]{5,}([0-9]{2,},[0-9]{1})\\w)", data)) {
+                    String sensorID = data.split("[ \\t]")[0];
+                    String orientation = data.split("[ \\t]")[1];
+                    droneList.get(counter).addDroneSensor(sensorID, orientation);`
                 }
             }
             myReader.close();
