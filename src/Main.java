@@ -1,5 +1,6 @@
-import file.DroneFileHandler;
-import model.Drones;
+import accse.file.DroneFileHandler;
+import accse.model.Drones;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
@@ -8,6 +9,8 @@ import java.util.stream.Stream;
 
 /**
  * main class that is the driver code for the whole practical
+ *
+ * @author Luka Eardley
  */
 
 public class Main {

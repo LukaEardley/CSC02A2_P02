@@ -1,6 +1,6 @@
-package file;
+package accse.file;
 
-import model.Drones;
+import accse.model.Drones;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,7 +9,12 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-//Class that is responsible for reading each file, parsing the strings and setting the values for each drone.
+/**
+ * accse.model.Sensor class that has all the information relating to the drones sensor
+ *
+ * @author Luka Eardley
+ */
+//Class that is responsible for reading each accse.file, parsing the strings and setting the values for each drone.
 public class DroneFileHandler {
 
     public static List<Drones> readDrones(String FileName) {
@@ -27,7 +32,7 @@ public class DroneFileHandler {
                     String Type = data.split("[ \\t]")[1];
                     droneList.add(new Drones(ID, Type));
                     counter += 1;
-                } else if (Pattern.matches("([a-zA-Z0-9\\t]{5,}([0-9]{2,},[0-9]{1})\\w)", data)) {
+                } else if (Pattern.matches("([a-zA-Z0-9\\t]{5,}([0-9]{3,},[0-9]{1})\\d)", data)) {
                     String sensorID = data.split("[ \\t]")[0];
                     String orientation = data.split("[ \\t]")[1];
                     droneList.get(counter).addDroneSensor(sensorID, orientation);

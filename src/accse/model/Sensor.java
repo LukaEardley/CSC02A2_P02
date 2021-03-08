@@ -1,6 +1,8 @@
-package model;
+package accse.model;
 /**
- * model.Sensor class that has all the information relating to the drones sensor
+ * accse.model.Sensor class that has all the information relating to the drones sensor
+ *
+ * @author Luka Eardley
  */
 public class Sensor {
     //Variables

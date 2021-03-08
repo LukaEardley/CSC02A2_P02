@@ -1,9 +1,11 @@
-package model;
+package accse.model;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Drone class that handles all the creation of each drone
+ *
+ * @author Luka Eardley
  */
 public class Drones {
     //Variables
